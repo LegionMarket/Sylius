@@ -15,8 +15,8 @@ php composer-setup.php --quiet
 RESULT=$?
 rm composer-setup.php
 ./composer.phar install 
-php composer.phar create-project -s beta sylius/sylius-standard public
-cd public
+#php composer.phar create-project -s beta sylius/sylius-standard public
+#cd public
 php bin/console sylius:install
 yarn install
 yarn run gulp
