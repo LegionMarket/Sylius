@@ -14,12 +14,13 @@ fi
 php composer-setup.php --quiet
 RESULT=$?
 rm composer-setup.php
-./composer.phar install 
-#php composer.phar create-project -s beta sylius/sylius-standard public
-#cd public
-php bin/console sylius:install
-yarn install
-yarn run gulp
-php bin/console server:start
-echo '#open http://localhost:8000/'
+./composer.phar install
+# need to fill in data for parameters.yml
+php bin/console sylius:install --no-interaction
+# Un-comment for dev data
+#php bin/console sylius:fixtures:load
+npm install -g npm
+npm install gulp
+npm install
+npm run gulp
 exit $RESULT
